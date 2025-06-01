@@ -1,0 +1,141 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="icon" href="../images/favicon.ico" sizes="any">
+    <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../images/icon.png">
+
+    <meta name="theme-color" content="#fafafa">
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet'/>
+
+    <link rel="stylesheet" href="../css/mystyle.css">
+    <script src="https://kit.fontawesome.com/865b557d09.js" crossorigin="anonymous"></script>
+
+    <script src="../javascript/ui.js"></script>
+    <script src="../javascript/virtualWalk.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+
+</head>
+
+<body>
+
+
+<!-- Add your site or application content here -->
+
+
+<div class="top-info-bar">
+    <p>Longitude: <span id='lng'></span></p>
+    <p>Latitude: <span id='lat'></span></p>
+    <p>Zoom: <span id='zoom'></span></p>
+</div>
+
+
+<!-- Arrow button -->
+<div class="arrow-button" onclick="toggleSideUI()">
+    <i class="fa-solid fa-chevron-left"></i>
+</div>
+
+<div class="SideUI">
+
+    <div class=container-parent>
+        <p id="path">Path A* Algorithm</p>
+        <div class="parent">
+            <div class="start-image" onclick="yourFunction()">
+                <i class="fa-regular fa-circle fa-sm"></i>
+            </div>
+
+            <div class="end-image" onclick="yourFunction()">
+                <i class="fa-solid fa-location-dot fa-sm"></i>
+            </div>
+            <div class="middle-circles">
+                <div class="circle-dots">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="input-fields">
+                <div class="start-input">
+                    <label for="startPos"></label><input type="text" id="startPos" placeholder="Goal x,y">
+                </div>
+                <div class="end-input">
+                    <label for="endPos"></label><input type="text" id="endPos" placeholder="Start x,y">
+                </div>
+
+            </div>
+            <button id="run-button">Find Path</button>
+        </div>
+    </div>
+
+    <div>
+        <button id="startVirtuallyWalk">Start Virtually Walk</button>
+    </div>
+
+
+    <div class="SideUI-container-text">
+        <p>Path sightseeing attractions</p>
+    </div>
+    <div class="grid-area">
+        <div class="Residential-Zone" onclick="toggleClick(this)">
+            <p class="title">Residential Zone</p>
+        </div>
+        <div class="City-infrastructure" onclick="toggleClick(this)">
+            <p class="title">City Infrastructure</p>
+        </div>
+        <div class="Commercial-Zone" onclick="toggleClick(this)">
+            <p class="title">Commercial Zone</p>
+        </div>
+        <div class="Entertainment-Zone" onclick="toggleClick(this)">
+            <p class="title">Entertainment Zone</p>
+        </div>
+        <div class="Nature" onclick="toggleClick(this)">
+            <p class="title">Nature</p>
+        </div>
+        <div class="Harbour" onclick="toggleClick(this)">
+            <p class="title">Harbour</p>
+        </div>
+        <div class="Culture" onclick="toggleClick(this)">
+            <p class="title">Culture</p>
+        </div>
+    </div>
+</div>
+
+
+<div id='map'></div>
+
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="panorama"></div>
+        <div class="button-container">
+            <button class="myButton" id="back">Go backward</button>
+            <button class="myButton"  id="forward">Go forward</button>
+    </div>
+
+</div>
+
+
+<script src="../javascript/app.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.928604458171804, 57.047984716106214]
+      },
+      "properties": {
+        "name": "Jacobs Home"
+      }
+    }
+  ]
+}

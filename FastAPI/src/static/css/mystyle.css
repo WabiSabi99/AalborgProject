@@ -1,0 +1,415 @@
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.top-info-bar {
+    background-color: rgb(10 132 255 / 90%);
+    color: #fff;
+    padding: 5px 1px;
+    font-family: monospace;
+    z-index: 2; /* Increase z-index to make the sidebar appear above the map */
+    position: absolute;
+    top: 0;
+    left: +10px;
+    margin: 12px;
+    border-radius: 4px;
+    width: 500px; /* Set a width for the sidebar */
+    height: 3%; /* Make the sidebar fill the height of the page */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    /* Add these lines to center the text */
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    align-items: center;
+}
+
+.top-info-bar p {
+    display: inline-block;
+    margin-right: 10px; /* Optional: add some space between the elements */
+}
+
+/* ####################### arrow #######################  */
+
+/* Styling for the arrow button */
+.arrow-button {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: rgba(44 44 46/ 90%);
+    color: #fff;
+    width: 25px;
+    height: 40px;
+    border-radius: 10%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 9999;
+
+    /* Add these lines to center the icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+}
+
+
+/* Styling for the arrow icon */
+.arrow-button i {
+    fill: #fff;
+}
+
+
+/* ####################### Side UI BAR #######################  */
+
+.SideUI {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially hide the side UI */
+    width: 300px;
+    height: 100%;
+    background-color: rgb(44 44 46);
+    transition: right 0.3s ease;
+    z-index: 9999; /* Ensure the sidebar is on top of other elements */
+}
+
+
+/* ####################### Path a star menu   */
+
+.container-parent {
+    padding: 20px;
+}
+
+#path {
+    color: #fff;
+    font-size: 20px;
+    font-family: monospace;
+    text-align: center;
+
+}
+
+#run-button {
+
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+    margin-right: -25px;
+    outline: none; /* Add this line */
+    border: none; /* Add this line */
+    transform: translateX(35%); /* Adjust this value as needed */
+    /* move down the button not using transform */
+    margin-top: 10px;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: white;
+    background-color: rgb(72 72 74);
+    padding: 20px; /* Adjust as needed */
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.start-image {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80%;
+    transform: translateY(10%); /* Adjust this value as needed */
+
+}
+
+.end-image {
+    grid-area: 3 / 1 / 4 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80%;
+    /* move image a bit up */
+    transform: translateY(-10%);
+}
+
+.middle-circles {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.input-fields {
+    grid-area: 1 / 2 / 4 / 3;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr); /* Make two equal-height rows */
+    transform: translateX(-70%); /* Adjust this value as needed */
+}
+
+.end-input {
+    grid-area: 2 / 1 / 3 / 2;
+
+
+}
+
+.start-input {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.start-image, .end-image {
+    cursor: pointer;
+}
+
+
+.input-fields input {
+    width: 150%; /* Adjust this value as needed */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+.circle-dots {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80%;
+    transform: translateY(10%);
+}
+
+
+.circle {
+    width: 5px; /* Adjust as needed */
+    height: 5px; /* Adjust as needed */
+    background-color: rgb(142 142 147); /* Adjust as needed */
+    border-radius: 50%; /* Makes the div a circle */
+    margin-bottom: 5px; /* Adds some space below the circles */
+}
+
+.SideUI-container-text {
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    font-family: monospace;
+    text-align: center;
+
+}
+
+
+/* ####################### Start virtauul walking button   */
+
+#startVirtuallyWalk {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove outline */
+    transform: translateX(22.5%); /* Adjust this value as needed */
+}
+
+#startVirtuallyWalk :hover {
+    background-color: #29602c; /* Darker green on hover */
+}
+
+
+/* ####################### Sight seeing attractions   */
+
+
+.grid-area {
+    position: relative; /* Ensure the container respects the z-index */
+    z-index: 999; /* Adjust the z-index as needed */
+    top: 15%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    height: 35%;
+    width: 75%;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "Residential-Zone City-infrastructure Commercial-Zone"
+    "Culture Nature Harbour"
+    "Entertainment-Zone Entertainment-Zone Entertainment-Zone";
+}
+
+.container {
+    background: rgb(72 72 74);
+
+}
+
+
+.Residential-Zone, .City-infrastructure, .Commercial-Zone, .Entertainment-Zone, .Nature, .Harbour, .Culture {
+    cursor: pointer;
+}
+
+.grid-area div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.grid-area div p {
+    text-align: center;
+    margin: 0;
+}
+
+.Residential-Zone {
+    grid-area: Residential-Zone;
+    background-color: rgb(255 69 58);
+    border: 1px solid #000;
+}
+
+/* Add a background color to each grid item */
+.City-infrastructure {
+    grid-area: City-infrastructure;
+    background-color: #65d2cd;
+    border: 1px solid #000;
+}
+
+.Commercial-Zone {
+    grid-area: Commercial-Zone;
+    background-color: #5d5be4;
+    border: 1px solid #000;
+}
+
+.Entertainment-Zone {
+    grid-area: Entertainment-Zone;
+    background-color: #3fc6de;
+    border: 1px solid #000;
+}
+
+.Nature {
+    grid-area: Nature;
+    background-color: rgb(48 209 88);
+    border: 1px solid #000;
+}
+
+.Harbour {
+    grid-area: Harbour;
+    background-color: #0ff;
+    border: 1px solid #000;
+}
+
+.Culture {
+    grid-area: Culture;
+    background-color: #fd375e;
+    border: 1px solid #000;
+}
+
+
+/* funny click animation */
+
+@keyframes click {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.click {
+    animation: click 0.5s;
+    background-color: gainsboro;
+}
+
+
+/* Add this CSS to your existing CSS file */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#panorama {
+    width: 1200px;
+    height: 600px;
+}
+
+
+.pnlm-load-box {
+    z-index: -999;
+    opacity: 0;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.myButton {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Mouse pointer on hover */
+}
+
+.myButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
